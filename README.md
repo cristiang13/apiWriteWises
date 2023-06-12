@@ -29,21 +29,16 @@ correra la app en modo desarrollo.\
 Abrir [http://localhost:8080](http://localhost:8080).
 
 
-## Run github page
+## Run google cloud
+En el directorio del proyecto, donde se encuentre el archivo Dockerfile, puedes correr: 
 
-En el directorio del proyecto, puedes correr: 
+### `docker build -t api_writewise:Vx.x .`
+crea un docker con del proyecto asignar la version del archivo docker
 
-### `npm run build`
+### `docker tag api_writewise:VX.X  gcr.io/utopian-button-382400/api_writewise:VX.X` 
+crea una etiqueta para versionar y organizar las imágenes de la api
 
-Construira la app para produccion en la carpeta `build`.\
-correteamente empaqueta react en modo produccion y optimiza el build para el mejor rendimiento.
+### `docker push  gcr.io/<id_proyecto_google_cloud>/api_writewise:VX.X`
+sube el archivo docker al servicio container registre
 
-La construccion es minificada y los nombres de los archivos incluyen los hashes.\
-Tu app esta lista para ser desplegada!
-
-
-
-### `npm run deploy` 
-
-Desplegara la app en github pages.\ 
-en el reposotorio crea una rama gh-pages para desplegar en github pages, en el repositorio de github seleccionar la rama\  y luego en el menu seleccionar git pages->setting alli se encuentra la url de la app desplegada.
+cuando el archivo docker se haya subido, desde el servicion de google run se selecciona este docker y se ejecuta
