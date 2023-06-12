@@ -1,7 +1,10 @@
+import os
 import pymongo
+from dotenv import load_dotenv
+load_dotenv()
 
 
-MONGODB_HOST = 'mongodb+srv://admin:uINsqkhy8mrC4rv2@clusterchanblock.9rmo2.mongodb.net/?retryWrites=true&w=majority'
+MONGODB_HOST = os.getenv("MONGODB_HOST")
 MONGODB_CLIENT = pymongo.MongoClient(MONGODB_HOST)
 MONGODB_DB = MONGODB_CLIENT["userWriteWise"]
 MONGODB_DB_SAVE_REPORT = MONGODB_CLIENT["historical_report_writewise"]
