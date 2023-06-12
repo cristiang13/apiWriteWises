@@ -1,0 +1,12 @@
+
+Lib/
+Include/
+Scripts/
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.swp
+*.bak
+*.cfg
+.env
